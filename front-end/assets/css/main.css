@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #b9b9b8;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bg-image {
+  background-image: url('../img/gloom1.png');
+  background-size: cover;
+  background-position: 300px;
+  background-repeat: no-repeat;
+}
+
+.bg-test {
+  background-image: url('../img/paper1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-about {
+  background-image: url('~/assets/img/office.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.bg-result {
+  background-image: url('~/assets/img/result1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+  opacity: 0;
+  }
+  to {
+  opacity: 1;
+  }
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.5s ease;
+}
+
+.button:hover::before {
+  width: 100%;
+}
+
+.carousel-container {
+  display: flex;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+}
+
+.error-message {
+  animation: fadeIn 0.5s linear forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel-container {
+  overflow: hidden;
+  max-height: 300px; /* Adjust the height based on your content */
+}
+
+.carousel-slide {
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: opacity 0.5s;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  opacity: 0;
+}
+
+.success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border: 1px solid #4caf50;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff; 
+}
